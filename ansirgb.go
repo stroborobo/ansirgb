@@ -90,6 +90,12 @@ func next(n, start, step uint8) uint8 {
 	return n + step
 }
 
+func PrintAll() {
+	for _, c := range Palette {
+		fmt.Println(c)
+	}
+}
+
 func Convert(c color.Color) *Color {
 	return Palette.Convert(c).(*Color)
 }
