@@ -51,8 +51,8 @@ func init() {
 	}
 
 	// 6 * 6 * 6 = 216 colors
-	var start uint8 = 95
-	var step uint8 = 40
+	var start uint8 = 75
+	var step uint8 = 45
 	r = 0
 	g = 0
 	b = 0
@@ -63,21 +63,21 @@ func init() {
 			if (i - 16) % 6 == 0 {
 				g = next(g, start, step)
 			}
-			if (i - 16) % 36 == 0 {
+			if (i - 16) % (6 * 6) == 0 {
 				r = next(r, start, step)
 			}
 		}
 	}
 
 	// grayscale
-	r = 238
-	g = 238
-	b = 238
+	r = 8
+	g = 8
+	b = 8
 	for i := 232; i <= 255; i++ {
 		Palette = append(Palette, &Color{&color.RGBA{r, g, b, 255}, i})
-		r -= 10
-		g -= 10
-		b -= 10
+		r += 10
+		g += 10
+		b += 10
 	}
 }
 
