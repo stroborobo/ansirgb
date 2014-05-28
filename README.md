@@ -23,3 +23,17 @@ Example
 => colored output (dark blue):
 
 	 26: 0000 5F5F D7D7
+
+The ansirgb.Color type looks like this:
+
+	type Color struct {
+		color.Color
+		Code	int
+	}
+
+Installation
+------------
+
+	> go get github.com/Knorkebrot/ansirgb
+
+Have fun :)
