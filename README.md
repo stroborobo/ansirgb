@@ -1,7 +1,8 @@
 ansirgb
 =======
 
-A package for converting `color.Color`s to ANSI color codes, 256 colors supported.
+A package for converting `color.Color`s to ANSI color codes, 256 colors
+supported.
 
 Example
 -------
@@ -24,16 +25,15 @@ Example
 
 	 26: 0000 5F5F D7D7
 
-The ansirgb.Color type looks like this:
-
-	type Color struct {
-		color.Color
-		Code	int
-	}
-
 Installation
 ------------
 
 	> go get github.com/Knorkebrot/ansirgb
 
 Have fun :)
+
+Documentation
+-------------
+
+An uncommented (but propably self-explanatory) documentation available at
+[GoDoc.org](http://godoc.org/github.com/Knorkebrot/ansirgb).
