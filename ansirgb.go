@@ -10,15 +10,20 @@ type Color struct {
 	Code	int
 }
 
+// String returns a small description of the color
+// containing ANSI code and a hex representation of
+// the RGB value, e.g. " 26: 0000 4B4B D2D2"
 func (c *Color) String() string {
 	r, g, b, _ := c.RGBA()
 	return fmt.Sprintf("%3d: \033[38;5;%dm%04X %04X %04X\033[0m", c.Code, c.Code, r, g, b)
 }
 
+// Fg returns the escape code for foreground color
 func (c *Color) Fg() string {
 	return fmt.Sprintf("\033[38;5;%dm", c.Code)
 }
 
+// Bg returns the escape code for background color
 func (c *Color) Bg() string {
 	return fmt.Sprintf("\033[48;5;%dm", c.Code)
 }
@@ -98,6 +103,7 @@ func next(n, start, step uint8) uint8 {
 	return n + step
 }
 
+// Convert returns the ANSI color closest to c.
 func Convert(c color.Color) *Color {
 	return Palette.Convert(c).(*Color)
 }

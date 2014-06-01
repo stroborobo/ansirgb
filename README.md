@@ -35,5 +35,5 @@ Have fun :)
 Documentation
 -------------
 
-An uncommented (but propably self-explanatory) documentation available at
+Documentation is available at
 [GoDoc.org](http://godoc.org/github.com/Knorkebrot/ansirgb).
