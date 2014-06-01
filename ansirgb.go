@@ -15,6 +15,14 @@ func (c *Color) String() string {
 	return fmt.Sprintf("%3d: \033[38;5;%dm%04X %04X %04X\033[0m", c.Code, c.Code, r, g, b)
 }
 
+func (c *Color) Fg() string {
+	return fmt.Sprintf("\033[38;5;%dm", c.Code)
+}
+
+func (c *Color) Bg() string {
+	return fmt.Sprintf("\033[48;5;%dm", c.Code)
+}
+
 var (
 	Palette = make(color.Palette, 0, 255)
 )
