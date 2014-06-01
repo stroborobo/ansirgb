@@ -1,3 +1,4 @@
+// Package ansirgb converts color.Color's to ANSI colors
 package ansirgb
 
 import (
@@ -5,6 +6,7 @@ import (
 	"image/color"
 )
 
+// Color represents an ANSI color
 type Color struct {
 	color.Color
 	Code	int
@@ -29,16 +31,17 @@ func (c *Color) Bg() string {
 }
 
 var (
+	// Palette contains all 256 ANSI colors
 	Palette = make(color.Palette, 0, 255)
 )
 
 func init() {
-	var r uint8 = 0
-	var g uint8 = 0
-	var b uint8 = 0
+	var r uint8
+	var g uint8
+	var b uint8
 
 	// 8 Bit colors
-	var min8 uint8 = 0
+	var min8 uint8
 	var max8 uint8 = 170
 	for i := 0; i <= 15; i++ {
 		if i == 8 {
