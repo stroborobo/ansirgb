@@ -67,8 +67,8 @@ func init() {
 	}
 
 	// 6 * 6 * 6 = 216 colors
-	var start uint8 = 75
-	var step uint8 = 45
+	var start uint8 = 95
+	var step uint8 = 40
 	r = 0
 	g = 0
 	b = 0
