@@ -76,10 +76,10 @@ func init() {
 		Palette = append(Palette, &Color{&color.RGBA{r, g, b, 255}, i})
 		b = next(b, start, step)
 		if i > 16 {
-			if (i - 16) % 6 == 0 {
+			if (i - 15) % 6 == 0 {
 				g = next(g, start, step)
 			}
-			if (i - 16) % (6 * 6) == 0 {
+			if (i - 15) % (6 * 6) == 0 {
 				r = next(r, start, step)
 			}
 		}
