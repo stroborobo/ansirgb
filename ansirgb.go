@@ -40,31 +40,8 @@ func init() {
 	var g uint8
 	var b uint8
 
-	// 8 Bit colors
-	var min8 uint8
-	var max8 uint8 = 170
-	for i := 0; i <= 15; i++ {
-		if i == 8 {
-			min8 = 85
-			max8 = 255
-		}
-		if i & 1 == 1 {
-			r = max8
-		} else {
-			r = min8
-		}
-		if i & 2 == 2 {
-			g = max8
-		} else {
-			g = min8
-		}
-		if i & 4 == 4 {
-			b = max8
-		} else {
-			b = min8
-		}
-		Palette = append(Palette, &Color{&color.RGBA{r, g, b, 255}, i})
-	}
+	// ignore 8 Bit colors, they are very dependent on the user's terminal
+	// while other colors usually aren't.
 
 	// 6 * 6 * 6 = 216 colors
 	var start uint8 = 95
