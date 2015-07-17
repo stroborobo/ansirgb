@@ -18,12 +18,10 @@ Example
 	func main() {
 		rgbColor := &color.RGBA{20, 80, 200, 255}
 		ansiColor := ansirgb.Convert(rgbColor)
-		fmt.Println(ansiColor)
+		fmt.Printf("%s%s\n", ansiColor.Fg(), "Foobar")
 	}
 
-=> colored output (dark blue):
-
-	 26: 0000 5F5F D7D7
+=> colored output (dark blue)
 
 Installation
 ------------
