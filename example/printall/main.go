@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Knorkebrot/ansirgb"
+	"github.com/stroborobo/ansirgb"
 )
 
 func main() {

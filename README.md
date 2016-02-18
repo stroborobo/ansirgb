@@ -12,7 +12,7 @@ Example
 	import (
 		"fmt"
 		"image/color"
-		"github.com/Knorkebrot/ansirgb"
+		"github.com/stroborobo/ansirgb"
 	)
 	
 	func main() {
@@ -26,7 +26,7 @@ Example
 Installation
 ------------
 
-	> go get github.com/Knorkebrot/ansirgb
+	> go get github.com/stroborobo/ansirgb
 
 Have fun :)
 
@@ -34,4 +34,4 @@ Documentation
 -------------
 
 Documentation is available at
-[GoDoc.org](http://godoc.org/github.com/Knorkebrot/ansirgb).
+[GoDoc.org](http://godoc.org/github.com/stroborobo/ansirgb).

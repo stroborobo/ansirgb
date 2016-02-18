@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"image/color"
 
-	"github.com/Knorkebrot/ansirgb"
+	"github.com/stroborobo/ansirgb"
 )
 
 func main() {
