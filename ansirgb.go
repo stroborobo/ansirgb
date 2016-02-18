@@ -22,12 +22,26 @@ func (c *Color) String() string {
 
 // Fg returns the escape code for foreground color
 func (c *Color) Fg() string {
+	// What the heck are you trying to do here, dearest user?
+	//if c.IsTransparent() {}
 	return fmt.Sprintf("\033[38;5;%dm", c.Code)
 }
 
 // Bg returns the escape code for background color
 func (c *Color) Bg() string {
+	if c.IsTransparent() {
+		return fmt.Sprintf("\033[49m")
+	}
 	return fmt.Sprintf("\033[48;5;%dm", c.Code)
+}
+
+// IsTransparent returns if the color is a transparent one
+func (c *Color) IsTransparent() bool {
+	return c.Code == -1
+}
+
+func (c *Color) Equals(rhs *Color) bool {
+	return c.Code == rhs.Code
 }
 
 var (
@@ -35,6 +49,7 @@ var (
 	Palette = make(color.Palette, 0, 255)
 )
 
+// init calculates the palette
 func init() {
 	var r uint8
 	var g uint8
@@ -72,6 +87,9 @@ func init() {
 		g += 10
 		b += 10
 	}
+
+	// transparent
+	Palette = append(Palette, &Color{&color.RGBA{0, 0, 0, 0}, -1})
 }
 
 func next(n, start, step uint8) uint8 {
